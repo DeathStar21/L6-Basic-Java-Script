@@ -1,0 +1,142 @@
+<html>
+<head>
+    <script>
+        let student = [
+            {
+                fullname: 'นายตั้งใจ เรียนมาก',
+                age: 18,
+                year: 1,
+                gpa: 3.40,
+                help: true,
+                approve: 0
+
+            },
+            {
+                fullname: 'นางสาวสาย เสมอมา',
+                age: 18,
+                year: 1,
+                gpa: 2.5,
+                help: true,
+                approve: 0
+
+            },
+            {
+                fullname: 'นายส่งงาน ตลอดมา',
+                age: 19,
+                year: 2,
+                gpa: 3.00,
+                help: false,
+                approve: 0
+
+            },
+            {
+                fullname: 'นายฉลาด ที่สุด',
+                age: 20,
+                year: 3,
+                gpa: 4.00,
+                help: false,
+                approve: 0
+
+            },
+            {
+                fullname: 'นางสาวใส่ใจ ดีงาม',
+                age: 20,
+                year: 3,
+                gpa: 2.90,
+                help: true,
+                approve: 0
+
+            },
+            {
+                fullname: 'นายทนงทวย คงคอย',
+                age: 20,
+                year: 3,
+                gpa: 3.35,
+                help: true,
+                approve: 0
+
+            },
+            {
+                fullname: 'นางสาวจิตใจ งดงาม',
+                age: 21,
+                year: 4,
+                gpa: 2.76,
+                help: true,
+                approve: 0
+
+            },
+            {
+                fullname: 'นายประหยัด จันอังคาร',
+                age: 21,
+                year: 4,
+                gpa: 1.00,
+                help: false,
+                approve: 0
+
+            },
+
+        ]
+
+        let i=0, length=student.length
+        
+        while(i<length)
+        {
+            if(student[i].gpa>3.2 && student[i].help==true)
+            {
+                console.log(student[i].fullname + ' เกิดเมื่อปี ' + (2564-student[i].age) + ' ได้รับทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์และยังช่วยงานภาควิชาด้วย')
+                student[i].approve=1;
+            }
+            else if(student[i].gpa>3.2 && student[i].help!=true)
+            {
+                console.log(student[i].fullname + ' เกิดเมื่อปี ' + (2564-student[i].age) + ' ได้รับทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์และยังไม่ได้ช่วยงานภาควิชาด้วย')
+                student[i].approve=1;
+            }
+            else if(student[i].gpa>2.75 && student[i].help==true)
+            {
+                console.log(student[i].fullname + ' เกิดเมื่อปี ' + (2564-student[i].age) + ' ได้รับทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์และยังช่วยงานภาควิชาด้วย')
+                student[i].approve=1;
+            }
+            else if(student[i].gpa<=2.75 && student[i].help==true)
+            {
+                console.log(student[i].fullname + ' เกิดเมื่อปี ' + (2564-student[i].age) + ' ไม่ได้รับทุนการศึกษา เนื่องจากเกรดเฉลี่ยไม่ถึงเกณฑ์และยังช่วยงานภาควิชาด้วย')
+            }
+            else
+            {
+                console.log(student[i].fullname + ' เกิดเมื่อปี ' + (2564-student[i].age) + ' ไม่ได้รับทุนการศึกษา เนื่องจากเกรดเฉลี่ยไม่ถึงเกณฑ์และยังไม่ได้ช่วยงานภาควิชาด้วย')
+            }
+            
+            i++
+        }
+        i=0;
+        while(i<4){
+            console.log('ชั้นปีที่ '+(i+1))
+            let count=0;
+            for(let j=0;j<length;j++)
+            {
+                // if(student[j].year==(i+1)&&student[j].gpa>3.2&&student[j].help==true)
+                // {
+                //     console.log(student[i].fullname + ' เนื่องจากเกรดเฉลี่ยถึงเกณฑ์และยังช่วยงานภาควิชาด้วย'+j)
+                // }
+                if(student[j].year==i+1 && student[j].approve==1 && student[j].help==true)
+                {
+                    console.log(student[j].fullname+' เนื่องจากเกรดเฉลี่ยถึงเกณฑ์และยังช่วยเหลืองานภาควิชาด้วย')
+                    count++;
+                }
+                else if(student[j].year==i+1 && student[j].approve==1 && student[j].help!=true)
+                {
+                    console.log(student[j].fullname+' เนื่องจากเกรดเฉลี่ยถึงเกณฑ์และยังไม่ได้ช่วยเหลืองานภาควิชาด้วย')
+                    count++;
+                }
+            }
+            i++
+            if(count==0)
+            {
+                console.log('ไม่มี')
+            }
+        }
+       
+    </script>
+</head>
+<body>
+</body>
+</html>
